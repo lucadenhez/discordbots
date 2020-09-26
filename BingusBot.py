@@ -2,7 +2,7 @@ import discord, re, random
 
 client = discord.Client()
 keywords = ["!bingus"]
-TOKEN = 'NzU5MjY5NzY0NjM1NDI2ODg3.X27DEg.9USxeZ1wi541ANbhbadgxUvqtB8'
+TOKEN = ''
 bingus_list = ["https://media.tenor.com/images/8e49bb7796692a102487cdb996323982/tenor.gif",
               "https://kittentoob.com/wp-content/uploads/2017/12/Hairless-Cats-3.jpg",
               "https://static.boredpanda.com/blog/wp-content/uploads/2020/03/89436950_1090410697992892_8878057772038512233_n-5e811f85444a3__700.jpg",
