@@ -19,8 +19,8 @@ async def on_message(message):
         if not quantity:
             print("Sender: " + str(message.author) + " | Response: Sorry, quantity is not a number.")
         else:
-            quantity = str(quantity[0])
-            if int(quantity) > 10:
+            quantity = quantity[0]
+            if quantity > 10:
                 try:
                     print("Sender: " + str(message.author) + " requested more than 10 images. Requested quantity: " + quantity)
                     await message.channel.send("Sorry, won't send more than 10 images at a time. (You can spam it though!)")
