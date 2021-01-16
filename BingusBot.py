@@ -19,21 +19,21 @@ async def on_message(message):
         if not quantity:
             print("Sender: " + str(message.author) + " | Response: Sorry, quantity is not a number.")
         else:
-            quantity = quantity[0]
+            quantity = int(quantity[0])
             if quantity > 10:
                 try:
-                    print("Sender: " + str(message.author) + " requested more than 10 images. Requested quantity: " + quantity)
+                    print("Sender: " + str(message.author) + " requested more than 10 images. Requested quantity: " + str(quantity))
                     await message.channel.send("Sorry, won't send more than 10 images at a time. (You can spam it though!)")
                 except:
                     print("Sorry, couldn't send the message explaining image quantity. Maybe check your internet connection or firewall rules?")
             else:
-                print("Sender: " + str(message.author) + "| Number of images requested: " + quantity)
-                for i in range(int(quantity)):
+                print("Sender: " + str(message.author) + "| Number of images requested: " + str(quantity))
+                for i in range(quantity):
                     try:
                         image = bingusImages[random.randint(0, len(bingusImages))]
                         await message.channel.send(image)
                     except:
-                        print("Sorry, couldn't send one image. Either image url is dead and or check your internet connection or firewall rules?")
+                        print("Sorry, couldn't send one image. Either image url is dead and or Discord is rate-limiting the bot.")
     else:
         pass
 
