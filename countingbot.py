@@ -1,14 +1,14 @@
 import discord, re
 
-botToken = "ODAxODcyNTc3OTU3ODU1MjYz.YAnACA.N_hXOg-a9j5GmC_LUK7Iry-cnuA"
-countingChannelID = 783541471990906881
+botToken = ""
+countingChannelID = # Integer
 client = discord.Client()
 
 @client.event
 async def on_message(message):
     if message.channel.id == countingChannelID:
         if message.author != client.user:
-            if "@" not in message.content: 
+            if "@" not in message.content: # Workaround for bot detecting @ mentions as integers
                 try:
                     currentNumber = int(message.content)
                     await message.channel.send(str(currentNumber + 1))
