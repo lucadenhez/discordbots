@@ -1,6 +1,6 @@
 import discord, re
 
-botToken = ""
+botToken = "" # Insert bot token here
 countingChannelID = # Integer
 client = discord.Client()
 
